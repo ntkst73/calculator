@@ -1,0 +1,445 @@
+
+.calc-header {
+    font-size: 56px;
+    color: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: 'Raleway';
+}
+
+.calc-main {
+    background: #263238;
+    padding: 50px 0 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.calc-container {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 65px;
+    font-family: 'Roboto';
+}
+
+.range-bock {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    padding: 35px 30px;
+    width: 50%;
+    margin-right: 40px;
+}
+
+.tab-block {
+    background: rgba(57, 69, 75, 0.7);
+    border-radius: 6px;
+    padding: 35px 30px;
+    width: 50%;
+}
+
+.green-text {
+    color: #95E2AB;
+}
+
+.value {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.stripe {
+    background: #39454B;
+}
+
+.row-values {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+.value-block {
+    max-width: 33.3333%;
+    width: 145px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grey-text {
+    color: #BFBFBF;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+}
+
+.value-block-label {
+    color: #95E2AB;
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.projected-val {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.border-val {
+    border-bottom: 2px solid #39454B;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+
+.input-style {
+    background: transparent;
+    border: 1px solid #39454B;
+    border-radius: 4px;
+    padding: 10px;
+    width: 140px;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 20px;
+}
+
+.dollar-input {
+
+}
+
+.dollar-sign {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #BFBFBF;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 10px;
+    font-size: 17px;
+    background: transparent;
+    color: #FFFFFF;
+    width: 20%;
+}
+
+.tab button:hover {
+
+}
+
+.tab button.active {
+    border-bottom: 4px solid #95E2AB;
+}
+
+.tablinks {
+    border-bottom: 4px solid transparent;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 0;
+    border-top: none;
+}
+
+.label {
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.slider {
+    width: 100%;
+}
+
+.range {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+
+.range-text {
+    color: #BFBFBF;
+    font-size: 14px;
+}
+
+.slide-container {
+    margin-bottom: 40px;
+}
+
+/*@media screen and (-webkit-min-device-pixel-ratio:0) {*/
+/*input[type='range'] {*/
+/*overflow: hidden;*/
+/*width: 100%;*/
+/*-webkit-appearance: none;*/
+/*background-color: #9a905d;*/
+/*}*/
+
+/*input[type='range']::-webkit-slider-runnable-track {*/
+/*height: 10px;*/
+/*-webkit-appearance: none;*/
+/*color: #13bba4;*/
+/*margin-top: -1px;*/
+/*width: 100%;*/
+/*}*/
+
+/*input[type='range']::-webkit-slider-thumb {*/
+/*width: 10px;*/
+/*-webkit-appearance: none;*/
+/*height: 10px;*/
+/*cursor: ew-resize;*/
+/*background: #434343;*/
+/*box-shadow: -80px 0 0 80px #43e5f7;*/
+/*}*/
+
+/*}*/
+
+#ex1Slider .slider-selection {
+    background: #BABABA;
+}
+
+.custominput {
+    background: linear-gradient(to right, #95E2AB 0%, #95E2AB 50%, #39454B 50%, #39454B 100%);
+    border-radius: 8px;
+    height: 7px;
+    width: 100%;
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /*border: 1px solid #000000;*/
+    height: 24px;
+    width: 9px;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+    /*margin-top: -14px; !* You need to specify a margin in Chrome, but in Firefox and IE it is automatic *!*/
+    box-shadow: 3px 3px 12px rgba(39, 52, 43, 0.45);
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+    box-shadow: 3px 3px 12px rgba(39, 52, 43, 0.45);
+    /*border: 1px solid #000000;*/
+    height: 24px;
+    width: 9px;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+    box-shadow: 3px 3px 12px rgba(39, 52, 43, 0.45);
+    /*border: 1px solid #000000;*/
+    height: 24px;
+    width: 9px;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+/* slider with two handlers */
+.min-max-slider {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.min-max-slider > label {
+    display: none;
+}
+
+span.value {
+    height: 1.7em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+span.value.lower::before {
+    content: " ";
+    display: inline-block;
+}
+
+span.value.upper::before {
+    content: " ";
+    display: inline-block;
+    margin-left: 0.4em;
+}
+
+.min-max-slider > .legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.min-max-slider > .legend > * {
+    color: #BFBFBF;
+    font-size: 14px
+}
+
+.min-max-slider > input {
+    cursor: pointer;
+    position: absolute;
+}
+
+/* webkit specific styling */
+.min-max-slider > input {
+    -webkit-appearance: none;
+    outline: none !important;
+    background: #95E2AB;
+    /*background-image: linear-gradient(to bottom, transparent 0%, transparent 30%, silver 30%, silver 60%, transparent 60%, transparent 100%);*/
+    height: 7px;
+}
+
+.min-max-slider > .min {
+    border-radius: 4px 0 0 4px;
+}
+
+.min-max-slider > .max {
+    border-radius: 0 4px 4px 0;
+}
+
+.min-max-slider > input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /*border: 1px solid #000000;*/
+    height: 24px;
+    width: 9px;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+    /*margin-top: -14px; !* You need to specify a margin in Chrome, but in Firefox and IE it is automatic *!*/
+    box-shadow: 3px 3px 12px rgba(39, 52, 43, 0.45);
+
+    /*-webkit-appearance: none; !* Override default look *!*/
+    /*appearance: none;*/
+    /*width: 14px; !* Set a specific slider handle width *!*/
+    /*height: 14px; !* Slider handle height *!*/
+    /*background: #eee; !* Green background *!*/
+    /*cursor: pointer; !* Cursor on hover *!*/
+    /*border: 1px solid gray;*/
+    /*border-radius: 100%;*/
+}
+
+.min-max-slider > input::-webkit-slider-runnable-track {
+    cursor: pointer;
+}
+
+/* end of slider with two handlers */
+
+.blue-indicator, .yellow-indicator, .green-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.blue-indicator {
+    background: #89B6D7;
+}
+
+.yellow-indicator {
+    background: #DBDD64;
+}
+
+.green-indicator {
+    background: #95E2AB;
+}
+
+.indicators-parent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lower, .upper {
+    visibility: hidden;
+}
+
+input:focus-visible {
+    outline: none;
+}
+.indicators-parent span {
+    color: #BFBFBF;
+    font-size: 14px;
+}
+
+.heading-wrapper {
+    width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+    .calc-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .range-bock {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .calc-header {
+        font-size: 46px;
+    }
+    .range-bock, .tab-block {
+        width: 80%;
+        padding: 25px 15px;
+    }
+}
+@media screen and (max-width: 400px){
+    .indicators-parent {
+        flex-wrap: wrap;
+    }
+    .label {
+        font-size: 15px;
+    }
+    .value-block {
+        width: 33.3333%;
+    }
+    .indicator-item {
+        width: 100%;
+    }
+    .tab button {
+        padding: 13px 5px;
+    }
+    .row-values {
+        justify-content: space-between;
+    }
+    .grey-text {
+        font-size: 13px;
+    }
+    .value {
+        font-size: 14px;
+    }
+}

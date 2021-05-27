@@ -1,0 +1,359 @@
+<!doctype html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="styles.css?v=1.0">
+
+</head>
+
+<body>
+<div class="calc-main">
+    <div class="heading-wrapper">
+        <h2 class="calc-header">Burn Calculator</h2>
+    </div>
+    <div class="calc-container">
+        <div class="range-bock">
+            <div class="slide-container">
+                <div class="row">
+                    <div class="label">Total Value Locked</div>
+                    <div class="input-wrapper"><span class="dollar-sign">$</span><input type="text" value="2502715078"
+                                                                                        class="input-style dollar-input"
+                                                                                        id="inputTotalValue"></div>
+                </div>
+                <!--<input type="range" min="1" max="100" value="50" class="slider">-->
+                <div class="chrome">
+                    <input class="custominput" id="rangeValueLocked" min="1000000" max="5000000000" type="range"
+                           value="2502715078"/>
+                </div>
+                <div class="range">
+                    <div class="range-text">$1M</div>
+                    <div class="range-text">$5B</div>
+                </div>
+            </div>
+
+            <div class="slide-container">
+                <div class="row">
+                    <div class="label">Current Price</div>
+                    <div class="input-wrapper"><span class="dollar-sign">$</span><input id="currentPrice" type="text"
+                                                                                        value="1.54"
+                                                                                        class="input-style"></div>
+                </div>
+                <div class="chrome">
+                    <input class="custominput" min="0.1" max="3" step="0.01" type="range" value="1.54"/>
+                </div>
+                <!--<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>-->
+                <div class="range">
+                    <div class="range-text">$0.1</div>
+                    <div class="range-text">$3</div>
+                </div>
+
+                <!--<div class="chrome">-->
+                <!--<input  class="custominput" min="0" max="60" type="range" value="30" />-->
+                <!--</div>-->
+
+            </div>
+
+            <div class="slide-container">
+                <div class="row">
+                    <div class="label">Average APY</div>
+                    <div><input id="apy" type="text" value="150" class="input-style"></div>
+                </div>
+                <div class="chrome">
+                    <input class="custominput" min="0" max="300" type="range" value="150"/>
+                </div>
+                <div class="range">
+                    <div class="range-text">0%</div>
+                    <div class="range-text">300%</div>
+                </div>
+
+            </div>
+            <div class="min-max-slider" data-legendnum="2">
+                <div class="label">How users claim rewards</div>
+                <label for="min">Minimum price</label>
+                <input id="min" class="min" name="min" type="range" step="1" min="0" max="100"/>
+                <label for="max">Maximum price</label>
+                <input id="max" class="max" name="max" type="range" step="1" min="0" max="100"/>
+            </div>
+            <div class="indicators-parent">
+                <div class="indicator-item">
+                    <div class="blue-indicator"></div>
+                    <span>Native Token: <span id="firstvalue">0</span></span>
+                </div>
+                <div class="indicator-item">
+                    <div class="green-indicator"></div>
+                    <span>Yield Token: <span id="secondvalue">100</span>%</span>
+                </div>
+                <div class="indicator-item">
+                    <div class="yellow-indicator"></div>
+                    <span>LP Token: <span id="thirdvalue">0</span>%</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="tab-block">
+
+            <div class="tab">
+                <button id="first-tab" class="tablinks" onclick="openTab(event, 'year-tab')">Year</button>
+                <button class="tablinks" onclick="openTab(event, 'month-tab')">Month</button>
+                <button class="tablinks" onclick="openTab(event, 'week-tab')">Week</button>
+                <button class="tablinks" onclick="openTab(event, 'day-tab')">Day</button>
+            </div>
+
+            <div id="year-tab" class="tabcontent">
+                <div class="row-values">
+                    <div class="value-block">
+                        <span class="grey-text">Projected Price</span>
+                        <div class="projected-val">
+                            <span class="value">$10.0</span>
+                            <span class="green-text">24%</span>
+                        </div>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens per day</span>
+                        <span class="value value-tokens">5,136,986</span>
+                    </div>
+                </div>
+                <span class="value-block-label">Native Token</span>
+                <div class="row-values border-val">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value" id="nativeTokensBurned">93,750,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">5%</span>
+                    </div>
+                </div>
+                <span class="value-block-label">Yield Token</span>
+                <div class="row-values border-val">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value" id="yieldTokensBurned">46,875,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value" id="yieldTokensPurchased">1,781,250,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">2.5%</span>
+                    </div>
+                </div>
+                <span class="value-block-label">LP Token</span>
+                <div class="row-values">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value" id="yieldLpTokensPurchased">937,500,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="month-tab" class="tabcontent">
+                <div class="row-values">
+                    <div class="value-block">
+                        <span class="grey-text">Projected Price</span>
+                        <div class="projected-val">
+                            <span class="value">$10.0</span>
+                            <span class="green-text">24%</span>
+                        </div>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens per day</span>
+                        <span class="value">5,136,986</span>
+                    </div>
+                </div>
+                <span class="value-block-label">Native Token</span>
+                <div class="row-values border-val">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value" id="monthNativeTokensBurned">93,750,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">5%</span>
+                    </div>
+                </div>
+                <span class="value-block-label">Yield Token</span>
+                <div class="row-values border-val">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value" id="monthYieldTokensBurned">46,875,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value" id="monthYieldTokensPurchased">1,781,250,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">2.5%</span>
+                    </div>
+                </div>
+                <span class="value-block-label">LP Token</span>
+                <div class="row-values">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value" id="monthYieldLpTokensPurchased">937,500,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="week-tab" class="tabcontent">
+                <div class="row-values">
+                    <div class="value-block">
+                        <span class="grey-text">Projected Price</span>
+                        <div class="projected-val">
+                            <span class="value">$10.0</span>
+                            <span class="green-text">24%</span>
+                        </div>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens per day</span>
+                        <span class="value">5,136,986</span>
+                    </div>
+                </div>
+                <span class="value-block-label">Native Token</span>
+                <div class="row-values border-val">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value" id="weekNativeTokensBurned">93,750,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">5%</span>
+                    </div>
+                </div>
+                <span class="value-block-label">Yield Token</span>
+                <div class="row-values border-val">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value" id="weekYieldTokensBurned">46,875,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value" id="weekYieldTokensPurchased">1,781,250,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">2.5%</span>
+                    </div>
+                </div>
+                <span class="value-block-label">LP Token</span>
+                <div class="row-values">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value" id="weekYieldLpTokensPurchased">937,500,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day-tab" class="tabcontent">
+                <div class="row-values">
+                    <div class="value-block">
+                        <span class="grey-text">Projected Price</span>
+                        <div class="projected-val">
+                            <span class="value">$10.0</span>
+                            <span class="green-text">24%</span>
+                        </div>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens per day</span>
+                        <span class="value">5,136,986</span>
+                    </div>
+                </div>
+                <span class="value-block-label">Native Token</span>
+                <div class="row-values border-val">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value" id="dayNativeTokensBurned">93,750,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">5%</span>
+                    </div>
+                </div>
+                <span class="value-block-label">Yield Token</span>
+                <div class="row-values border-val">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value" id="dayYieldTokensBurned">46,875,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value" id="dayYieldTokensPurchased">1,781,250,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">2.5%</span>
+                    </div>
+                </div>
+                <span class="value-block-label">LP Token</span>
+                <div class="row-values">
+                    <div class="value-block">
+                        <span class="grey-text">Token Burned</span>
+                        <span class="value">0</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Tokens Purchased</span>
+                        <span class="value" id="dayYieldLpTokensPurchased">937,500,000</span>
+                    </div>
+                    <div class="value-block">
+                        <span class="grey-text">Development</span>
+                        <span class="value">0%</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
